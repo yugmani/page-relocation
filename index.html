@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Page-Relocation</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Page-Relocation</h1>
+      <input type="button" onClick="WinOpen()" value="Re-Direct" />
+      <h2>
+        <span id="time-interval"></span>
+      </h2>
+    </div>
+    <script>
+      //Using window.location
+      //   window.location = "http://www.c-sharpcorner.com";
+
+      //Using window.location.href
+      //   window.location.href =
+      // "https://docs.google.com/document/d/1u6WTGQQWvJQlbJpbtqlLJSMdX-3LGeVqdKZeZf5Zams/edit#";
+
+      // Using window.location.assign
+      //   window.location.assign = "http://www.c-sharpcorner.com";
+
+      //window.open
+      // function WinOpen() {
+      //   window.open(
+      //     "http://www.c-sharpcorner.com/",
+      //     "OpenWindow",
+      //     "status = 1, height = 450, width = 450, resizable = 0"
+      //   );
+      // }
+
+      const timeEl = document.getElementById("time-interval");
+
+      function showTime() {
+        if (count === 0) {
+          Redirect();
+          // clearInterval(display);
+        }
+
+        let greet = "Welcome";
+        timeEl.innerText = count;
+        count--;
+      }
+
+      let count = 5;
+      let dispaly = setInterval(showTime, 1000);
+      function Redirect() {
+        window.location = "http://www.c-sharpcorner.com";
+      }
+    </script>
+  </body>
+</html>
